@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>💖 Te Amo NINA 💖</title>
+  <style>
+    @keyframes fall {
+      0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25%, 75% { transform: scale(1.1); }
+      50% { transform: scale(1); }
+    }
+
+    /* Fondo de estrellas con CSS */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: 
+        radial-gradient(2px 2px at 10px 20px, white, transparent),
+        radial-gradient(2px 2px at 40px 60px, white, transparent),
+        radial-gradient(1.5px 1.5px at 70px 120px, white, transparent),
+        radial-gradient(1.7px 1.7px at 110px 90px, white, transparent),
+        linear-gradient(135deg, #f9c1d9, #f5a9bd, #f1a0c9);
+      background-repeat: repeat;
+      background-size: 150px 150px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      animation: heartbeat 2s infinite;
+      color: #b6003b;
+      text-shadow: 2px 2px 4px #ffdde7;
+      z-index: 2;
+    }
+
+    .heart, .lemon {
+      position: fixed;
+      top: -50px;
+      opacity: 0.8;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      z-index: 0;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .heart { font-size: 18px; }
+    .lemon { font-size: 20px; }
+
+    .carousel {
+      max-width: 90vw;
+      width: 400px;
+      height: auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(255, 20, 80, 0.7);
+      margin-bottom: 10px;
+      background: white;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      border-radius: 15px 15px 0 0;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+      position: relative;
+      pointer-events: auto;
+    }
+
+    .caption {
+      max-width: 400px;
+      margin: 0 auto 20px auto;
+      background: #ffe6eb;
+      border-radius: 0 0 15px 15px;
+      padding: 12px 15px;
+      font-size: 1rem;
+      color: #b6003b;
+      box-shadow: 0 5px 15px rgba(255, 0, 80, 0.3);
+      min-height: 50px;
+      text-align: center;
+      z-index: 1;
+      aria-live: polite;
+    }
+
+    .buttons {
+      margin: 15px 0 30px 0;
+      z-index: 1;
+    }
+
+    .buttons button {
+      background: #ff4d6d;
+      border: none;
+      color: white;
+      padding: 8px 20px;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 77, 109, 0.7);
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+
+    .buttons button:hover {
+      background: #ff7a98;
+    }
+
+    .text-section {
+      max-width: 90vw;
+      width: 400px;
+      background: #ffd9e1cc;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-sizing: border-box;
+      box-shadow: 0 0 25px rgba(255, 77, 109, 0.5);
+      color: #a20037;
+      text-align: justify;
+      z-index: 1;
+    }
+
+    audio {
+      width: 90vw;
+      max-width: 400px;
+      outline: none;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #ff4d6daa;
+      margin-bottom: 40px;
+      z-index: 1;
+    }
+
+    @media (max-width: 480px) {
+      .carousel, .text-section, audio {
+        width: 90vw;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💖 Te Amo Mucho, Nina 💖</h1>
+
+  <div class="carousel" aria-label="Carrusel de imágenes">
+    <img src="Amor/navidad.jpeg" alt="Nuestra Navidad Juntos, estaba muy emocionado y feliz de pasar esas fechas a tu lado" class="active" />
+    <img src="Amor/primeras_salidas.jpeg" alt="como olvidar cuando caminabamos a los parques y te abrias conmigo" />
+    <img src="Amor/llamada.jpeg" alt="sin importar la distancia siempre buscamos soluciones de sentirnos cercanos" /> 
+    <img src="Amor/atardecer.jpeg" alt="mientras tu veias el cielo yo admiraba el mio ❤️‍🩹" />
+    <img src="Amor/noche.jpeg" alt="cada salida contigo me encanta no cambiaria nada" />
+  </div>
+
+  <div class="caption" id="caption" aria-live="polite" aria-atomic="true">
+    “Nuestro amor es la luz que ilumina mis días.”
+  </div>
+
+  <div class="buttons">
+    <button id="prevBtn" aria-label="Imagen anterior">⟵ Anterior</button>
+    <button id="nextBtn" aria-label="Imagen siguiente">Siguiente ⟶</button>
+  </div>
+
+  <div class="text-section">
+    <h2>🤍 NUESTRO PRIMER AÑO 🤍</h2>
+    <p>
+      Feliz primer año, Nina. Hoy hace un año nos hicimos novios, y antes de eso estábamos hablando sobre por qué nos habíamos dejado de hablar, de cómo nos había ido en la vida. ¿Quién iba a pensar que después de eso soltarías un “te quiero mucho”? Estaba como niño en dulcería, jaja, no sabía qué hacer. Quería gritar que esa niña de kínder me gustaba y que me quería.
+      <br><br>
+      Pasó un tiempo, seguimos hablando, y ese “te quiero” escaló a un “te amo”. Yo, más que feliz de ser tu pareja. La verdad es que mejor compañera no existe, y soy tan afortunado de compartir una vida contigo. Y si existe algo más allá de la vida, quiero explorarlo contigo a mi lado.
+      <br><br>
+      Aún recuerdo cuando estaba muy nervioso por verte. No sabía cómo reaccionar, no sabía cómo hablar ni cómo tomarte de la mano, o siquiera si debía hacerlo. El primer beso me voló la cabeza, porque fue tan puro, tan real... Me sentí tan seguro, tan yo.
+      <br><br>     
+      Te amo demasiado, Alejandra. Hemos recorrido un camino muy hermoso, y sé que seguiremos recorriéndolo. Si te cansas, recárgate en mí. Si quieres llorar, hazlo en mi hombro. Si tienes miedo, escóndete detrás de mí. Pero pase lo que pase, siempre te apoyaré.  
+      <br><br>
+      Soy tu amigo, tu compañero, tu cómplice, tu hater... soy todo para ti.  
+      <br><br>
+      Partiré tus limones siempre.  
+      <br><br>
+      Te amo, y siempre será así. 🍋 
+    </p>
+  </div>
+
+  <audio controls>
+    <source src="Amor/Camilo - La Boda.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    const captionText = document.getElementById('caption');
+    const captions = [
+      "“Nuestra Navidad Juntos, estaba muy emocionado y feliz de pasar esas fechas a tu lado.”",
+      "“como olvidar cuando caminabamos a los parques y te abrias conmigo.”",
+      "“sin importar la distancia siempre buscamos soluciones de sentirnos cercanos.”",
+      "“mientras tu veias el cielo yo admiraba el mio ❤️‍🩹.”",
+      "“Gracias por ser mi compañera de vida y aventuras.”"
+    ];
+
+    let current = 0;
+    let interval;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+      captionText.textContent = captions[index];
+      current = index;
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      prevImage();
+      resetInterval();
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      nextImage();
+      resetInterval();
+    });
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(nextImage, 5000);
+    }
+
+    interval = setInterval(nextImage, 5000);
+    showImage(current);
+
+    // Animación de corazones y limones
+    function createFallingEmojis() {
+      const total = 20;
+      for (let i = 0; i < total; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+        heart.style.animationDelay = (Math.random() * 5) + 's';
+        heart.style.fontSize = 12 + Math.random() * 18 + 'px';
+        heart.textContent = '❤️';
+        document.body.appendChild(heart);
+
+        const lemon = document.createElement('div');
+        lemon.classList.add('lemon');
+        lemon.style.left = Math.random() * 100 + 'vw';
+        lemon.style.animationDuration = (6 + Math.random() * 6) + 's';
+        lemon.style.animationDelay = (Math.random() * 6) + 's';
+        lemon.style.fontSize = 14 + Math.random() * 16 + 'px';
+        lemon.textContent = '🍋';
+        document.body.appendChild(lemon);
+      }
+    }
+
+    createFallingEmojis();
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
